@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Intranet">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+		<link rel="shortcut icon" type="image/x-icon" href="../intranet-kmd/img/iconos/favicon.ico">
+		<link rel="stylesheet" href="../intranet-kmd/css/principal.css">
+		<link rel="stylesheet" href="../intranet-kmd/css/cabecera.css">
+		<link rel="stylesheet" href="../intranet-kmd/css/menu.css">
+		<link rel="stylesheet" href="../intranet-kmd/css/cuerpo.css">
+		<link rel="stylesheet" href="../intranet-kmd/css/footer.css">
+		<link rel="stylesheet" type="text/css" href="../intranet-kmd/css/fonts.css">
+		<link rel="stylesheet" type="text/css" href="../intranet-kmd/css/directorio.css">
+		<link rel="stylesheet" type="text/css" href="../intranet-kmd/css/navidad.css">
+		<title>Intranet KIA Diamante</title>
+	</head>
+	<body>
+		<aside id="ext-modal" class="ext-modal">
+			<div class="content-modal">
+				<table id="ExtTable">
+					<caption><h3>Listado de Extensiones</h3></caption>
+					<tr>
+						<th onclick="sortTable(0,'int')">Ext</th><th onclick="sortTable(1,'str')">Área</th><th onclick="sortTable(2,'str')">Nombre</th>
+					</tr>
+					<tbody>
+						<tr><td>101</td><td>Recepción</td><td>Andrea Paulina Cabrera Cruz</td></tr>
+						<tr><td>102</td><td>Gte. Negocios</td><td>Ana Alejandra Pastrana García</td></tr>
+						<tr><td>103</td><td>Admvo. Ventas</td><td>María de Jesús Antúnez Nuñez</td></tr>
+						<tr><td>104</td><td>EPCI</td><td>Sayra Marysol Brito Valdez</td></tr>
+						<tr><td>105</td><td>Ventas Digitales</td><td>Carlos Imeldo Flores Mercader</td></tr>
+						<tr><td>106</td><td>Ventas 01</td><td>Asesores de Ventas</td></tr>
+						<tr><td>107</td><td>Ventas 02</td><td>Asesores de Ventas</td></tr>
+						<tr><td>108</td><td>Ventas 03</td><td>Asesores de Ventas</td></tr>
+						<tr><td>109</td><td>Ventas 04</td><td>Asesores de Ventas</td></tr>
+						<tr><td>110</td><td>Gte. Seminuevos</td><td>Cristopher Ayax de Leon García</td></tr>
+						<tr><td>111</td><td>Vigilancia</td><td>Vigilante en Turno</td></tr>
+						<tr><td>112</td><td>Ventas Seminuevos</td><td>Asesores Seminuevos</td></tr>
+						<tr><td>113</td><td>Citas Servicio</td><td>Karen Yareli Duarte Ortuño</td></tr>
+						<tr><td>114</td><td>Gte. Postventa</td><td>Estephany Zavala Chavarria</td></tr>
+						<tr><td>115</td><td>Garantías</td><td>Heidi Mendoza Reyes</td></tr>
+						<tr><td>116</td><td>Taller</td><td>Técnicos de Taller</td></tr>
+						<tr><td>117</td><td>Asesor SVC 01</td><td>Ismael Servando Velazquez Maravillas</td></tr>
+						<tr><td>118</td><td>Asesor SVC 02</td><td>Fredi Ramirez Cabrera</td></tr>
+						<tr><td>119</td><td>Refacciones</td><td>Erick Alberto Alonso Anzures</td></tr>
+						<tr><td>120</td><td>Caja General</td><td>Gerardo Gabriel Flores Rosales</td></tr>
+						<tr><td>121</td><td>Contabilidad</td><td>Liliana Castellanos Peralta</td></tr>
+						<tr><td>122</td><td>Cuentas por Cobrar</td><td>Marcelino Vázquez Ramirez</td></tr>
+						<tr><td>123</td><td>Contador Gral.</td><td>Israel Blanco Ortiz</td></tr>
+						<tr><td>124</td><td>Aux. Contable</td><td>Guadalupe Sandoval Ayala</td></tr>
+						<tr><td>125</td><td>Asesor SVC 03</td><td>Diego Brito Cruz</td></tr>
+						<tr><td>126</td><td>Marketing</td><td>Rocío Lugardo Lugardo</td></tr>
+						<tr><td>127</td><td>Trainer</td><td>Edgard Araiz Pineda</td></tr>
+						<tr><td>128</td><td>Recursos Humanos</td><td>Janet Dávalos Luengas</td></tr>
+						<tr><td>129</td><td>Sistemas</td><td>Guillermo Medina Rodríguez</td></tr>
+						<tr><td>130</td><td>Sala de Juntas</td><td>Presentes en Reunión</td></tr>
+						<tr><td>131</td><td>Auditor Interno</td><td>Fernando Solano Martínez</tdV>
+						<tr><td>132</td><td>Gte. General</td><td>Gerardo Rafael Bárcenas Torres</td></tr>
+						<tr><td>133</td><td>Gte. Administrativo</td><td>Alberto Robles Torrentera</td></tr>
+						<tr><td>134</td><td>Gte. Comercial</td><td>Abraham Campos Rios</td></tr>
+					</tbody>
+				</table>
+					<a href="#" class="btn-modal-close">Cerrar</a>
+			</div>
+			<script>
+				function sortTable(n,type) {
+					var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+					table = document.getElementById("ExtTable");
+					switching = true;
+					dir = "asc";
+					while (switching) {
+						switching = false;
+						rows = table.rows;
+						for (i = 1; i < (rows.length - 1); i++) {
+							shouldSwitch = false;
+							x = rows[i].getElementsByTagName("td")[n];
+							y = rows[i + 1].getElementsByTagName("td")[n];
+							if (dir == "asc") {
+								if ((type=="str" && x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) || (type=="int" && parseFloat(x.innerHTML) > parseFloat(y.innerHTML))) {
+									shouldSwitch= true;
+									break;
+								}
+							}
+							else if (dir == "desc") {
+								if ((type=="str" && x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) || (type=="int" && parseFloat(x.innerHTML) < parseFloat(y.innerHTML))) {
+									shouldSwitch = true;
+									break;
+								}
+							}
+						}
+						if (shouldSwitch) {
+							rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+							switching = true;
+							switchcount ++;
+						}
+						else {
+							if (switchcount == 0 && dir == "asc") {
+								dir = "desc";
+								switching = true;
+							}
+						}
+					  }	
+				}
+			</script>
+		</aside>
+		<section id="cabecera">
+			<div class="menu-icon" id="btn-menu"></div>
+			<img id="logo" src="../intranet-kmd/img/Logo.png" alt="Diamante">
+			<h1>Intranet KMD</h1>
+			<span id="eslogan">The Power to Surprise</span>
+			<nav class="menu" id="menu">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="../intranet-kmd/portales.html">Portales</a></li>
+					<li><a href="../intranet-kmd/formatos.html">Formatos</a></li>
+					<li><a href="../intranet-kmd/procesos.html">Procesos</a></li>
+					<li><a href="../intranet-kmd/politicas.html">Politicas</a></li>
+					<li class="borde pag-activa"><a href="../intranet-kmd/directorio.html">Directorio</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section id="cuerpo">
+			<h1 class="titulo">Directorio KIA Diamante</h1>
+			<a href="#ext-modal" class="mostrar-ext-modal">Ver Listado de Extensiones</a>
+<!-- Gerencia General-->
+			<h2 class="subtitulos">Gerencia General</h2>
+			<div class="tarjeta">
+				<h3 class="cargo">Gerencia General</h3>
+				<p><span>Gerardo Bárcenas Torres</span></br>Ext. 132</br>Correo: <a href="mailto:ggeneral.kma@grupoautofin.com">ggeneral.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Sala de Juntas</h3>
+					<p><span>Sala de Juntas KIA</span></br>Ext. 130</br><a href="#"></a></p>
+				</div>
+<!-- Administracion-->
+				<h2 class="subtitulos">Gerencia Administrativa</h2>	
+			<div class="tarjeta">
+				<h3 class="cargo">Gerente Admvo</h3>
+				<p><span>Alberto Robles Torrentera</span></br>Ext. 133</br>Correo: <a href="mailto:admvo.kma@grupoautofin.com">admvo.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Contador General</h3>
+				<p><span>Israel Blanco Ortiz</span></br>Ext. 123</br>Correo: <a href="mailto:contgral.kma@grupoautofin.com">contgral.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Cuentas por Cobrar</h3>
+				<p><span>Marcelino Vázquez Ramirez</span></br>Ext. 122</br>Correo: <a href="mailto:cxc.kma@grupoautofin.com">cxc.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Auxiliar Contable</h3>
+				<p><span>Liliana Castellanos Peralta</span></br>Ext. 121</br>Correo: <a href="mailto:auxcont02.kma@grupoautofin.com">auxcont02.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Auxiliar Contable</h3>
+				<p><span>Guadalupe Sandoval Ayala</span></br>Ext. 124</br>Correo: <a href="mailto:auxcont03.kma@grupoautofin.com">auxcont03.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Caja General</h3>
+				<p><span>Gerardo Gabriel Flores Rosales</span></br>Ext. 120</br>Correo: <a href="mailto:caja.kma@grupoautofin.com">caja.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Contralor Corporativo</h3>
+				<p><span>Manuel Alejandro Morales Bello</span></br>Tel. 55 44 66 87 30</br>Correo: <a href="mailto:mmorales@grupoautofin.com">mmorales@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Auditor Interno</h3>
+				<p><span>Fernando Solano Martínez</span></br>Tel. 744 194 95 08</br>Correo: <a href="mailto:fsolano@grupoautofin.com">fsolano@grupoautofin.com</a></p>
+			</div>
+<!-- Nuevos			 -->
+			<h2 class="subtitulos">Gerencia Comercial, G. Negocios, BDC y Hospitalidad</h2>
+			<div class="tarjeta">
+				<h3 class="cargo">Gerente Comercial</h3>
+				<p><span>Abraham Campos Rios</span></br>Ext. 134</br>Correo: <a href="mailto:gcomercial.kma@grupoautofin.com">gcomercial.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Gerente de Negocios</h3>
+				<p><span>Alejandra Pastrana García</span></br>Ext. 102</br>Correo: <a href="mailto:gnegocios.kma@grupoautofin.com">gnegocios.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Coord. BDC</h3>
+				<p><span>Carlos Imeldo Flores</span></br>Ext. 105</br>Correo: <a href="mailto:gbdc.kma@grupoautofin.com">gbdc.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Admvo Ventas</h3>
+					<p><span>Maria de Jesús Antunez</span></br>Ext. 103</br>Correo: <a href="mailto:admonventas.kma@grupoautofin.com">admonventas.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">EPCI</h3>
+					<p><span>Sayra Marysol Brito Valdez</span></br>Ext. 104</br>Correo: <a href="mailto:epci.kma@grupoautofin.com">epci.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Trainer</h3>
+				<p><span>Edgard Araiz Pineda</span></br>Correo: <a href="mailto:trainer.kiadiamante@grupoautofin.com">trainer.kiadiamante@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Traslados</h3>
+					<p><span>Daniel Andrade Valente</span></br>Correo: <a href="mailto:entregas.kma@grupoautofin.com">entregas.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Previador</h3>
+				<p><span>Manuel Guillen Noriega</span></br>Ext. 116</br><a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Anfitriona</h3>
+				<p><span>Andrea Paulina Cabrera Cruz</span></br>Ext. 101</br>Correo: <a href="mailto:recepcion.kma@grupoautofin.com">recepcion.kma@grupoautofin.com</a></p>
+			</div>
+			<div style="border-bottom: 2px solid gray; width: 100%;"></div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Aarón Flores Quevedo</span></br>Chilpo: (747) 116 28 46</br>Correo: <a href="mailto:aflores.kma@grupoautofin.com">aflores.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Asesor Comercial</h3>
+					<p><span>Adriana Aguilar Pahua</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:aaguilar.kma@grupoautofin.com">aaguilar.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Asesor Comercial</h3>
+					<p><span>Alicia del Carmen Murillo Galdames</span></br>Ext. 106 - 109</br><a href="mailto:amurillo.kma@grupoautofin.com">amurillo.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Brissa Astudillo Sánchez</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:bastudillo.kma@grupoautofin.com">bastudillo.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Erika María Galeana Cedeño</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:egaleana.kma@grupoautofin.com">egaleana.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Efrain Laureano Balbuena</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:elaureano.kma@grupoautofin.com">elaureano.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Iliana Nava Cruz</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:inava.kma@grupoautofin.com">inava.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Jose Guadalupe Oyorzabal</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:jgoyorzabal.kma@grupoautofin.com">jgoyorzabal.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>José Montiel Martínez</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:jimontiel.kma@grupoautofin.com">jimontiel.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Juan Romero Palma</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:jromero.kma@grupoautofin.com">jromero.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Luis Javier Navarro Salinas</span></br>Ext. 106 - 109</br>Correo: <a href="mailto:ljnavarro.kma@grupoautofin.com">ljnavarro.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Maidely O'demaris Mendez Flores</span></br>Chilpo: (747) 116 28 46</br> <a href="mailto:mmendez.kma@grupoautofin.com">mmendez.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Comercial</h3>
+				<p><span>Nabor Portillo Ortiz</span></br>Ext. 106 - 109</br> <a href="mailto:nportillo.kma@grupoautofin.com">nportillo.kma@grupoautofin.com</a></p>
+			</div>
+<!-- Seminuevos			 -->
+			<h2 class="subtitulos">Gerencia Seminuevos</h2>
+			<div class="tarjeta">
+				<h3 class="cargo">Gerente Seminuevos</h3>
+				<p><span>Cristopher de León García</span></br>Ext. 110</br>Correo: <a href="mailto:gseminuevos.kma@grupoautofin.com">gsemienuvos.kma@grupoautofin.com</a>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Coord. Local</h3>
+					<p><span>Ana Cristina Najera Dominguez</span></br>Local Pie de la Cuesta</br>Tel.: (744) 365 02 21<a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Seminuevos</h3>
+				<p><span>Ezequiel Aburto Duarte</span></br>Ext. 112</br>Correo: <a href="mailto:eaburto.kma@grupoautofin.com">eaburto.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Seminuevos</h3>
+				<p><span>Edgar Arturo de los Santos</span></br>Ext. 112</br><a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Seminuevos</h3>
+				<p><span>Adrian Antonio Mercado Benitez</span></br>Ext. 112</br><a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Lavador</h3>
+				<p><span>Oscar Victoria Suastegui</span></br>Ext. 116</br><a href="#"></a></p>
+			</div>
+<!-- Servicio			 -->
+			<h2 class="subtitulos">Gerencia Postventa y Refacciones</h2>
+			<div class="tarjeta">
+				<h3 class="cargo">Gerente Postventa</h3>
+				<p><span>Estephany Zavala Chavarría</span></br>Ext. 114</br>Correo: <a href="mailto:gpostventa.kma@grupoautofin.com">gpostventa.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">FLC</h3>
+				<p><span>Ana Iris Carmona Flores</span></br>Ext. 125</br>Correo: <a href="mailto:promotorflc@grupoautofin.com">promotorflc@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Citas</h3>
+				<p><span>Karen Duarte Ortuño</span></br>Ext. 113</br>Correo: <a href="mailto:citas.kma@grupoautofin.com">citas.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Garantías</h3>
+				<p><span>Heidi Mendoza Reyes</span></br>Ext. 115</br>Correo: <a href="mailto:garantias.kma@grupoautofin.com">garantias.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Servicio</h3>
+				<p><span>Ismael Velazquez Maravillas</span></br>Ext. 117</br>Correo: <a href="mailto:servicio01.kma@grupoautofin.com">servicio01.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Servicio</h3>
+				<p><span>Fredi Ramirez Cabrera</span></br>Ext. 118</br>Correo: <a href="mailto:servicio02.kma@grupoautofin.com">servicio02.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Asesor Servicio</h3>
+				<p><span>Diego Brito Cruz</span></br>Ext. 117 - 118</br><a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Jefe de Refacciones</h3>
+				<p><span>Erick Alonso Anzures</span></br>Ext. 119</br>Correo: <a href="mailto:refacciones.kma@grupoautofin.com">refacciones.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Jefe de Taller</h3>
+				<p><span>Damian Linares Velazquez</span></br>Ext. 116</br>Correo: <a href="mailto:dlinares.kma@grupoautofin.com">dlinares.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Técnico Master</h3>
+				<p><span>Guillermo Hernández Gómez</span></br>Ext. 116</br><a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Técnico Básico</h3>
+				<p><span>Ricardo Marin de la Rosa</span></br>Ext. 116</br>Correo: <a href="mailto:rmarin.kma@grupoautofin.com">rmarin.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Técnico Básico</h3>
+				<p><span>Luis Ángel Salazar Pano</span></br>Ext. 116</br>Correo: <a href="mailto:lasalazar.kma@grupoautofin.com">lasalazar.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Técnico Básico</h3>
+				<p><span>Ivan Cossio Enriquez</span></br>Ext. 116</br> <a href="#"></a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Lavador</h3>
+				<p><span>Raúl Acosta Guadarrama</span></br>Ext. 116</br><a href="#"></a></p>
+			</div>
+<!-- Jefaturas			 -->
+			<h2 class="subtitulos">Jefaturas</h2>
+			<div class="tarjeta">
+				<h3 class="cargo">Jefe de Sistemas</h3>
+				<p><span>Guillermo Medina Rodríguez</span></br>Ext. 129</br>Correo: <a href="mailto:sistemas.kma@grupoautofin.com">sistemas.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Jefe de RH</h3>
+				<p><span>Janet Dávalos Luengas</span></br>Ext. 128</br>Correo: <a href="mailto:rh.kma@grupoautofin.com">rh.kma@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+					<h3 class="cargo">Marketing</h3>
+					<p><span>Rocío Lugardo Lugardo</span></br>Ext. 126</br>Correo: <a href="mailto:mkt.kiadiamante@grupoautofin.com">mkt.kiadiamante@grupoautofin.com</a></p>
+			</div>
+			<div class="tarjeta">
+				<h3 class="cargo">Jefe de Mantto</h3>
+				<p><span>Salvador Sotelo Adame</span></br>Ext. 116</br>Correo: <a href="mailto:sadame.kma@grupoautofin.com">sadame.kma@grupoautofin.com</a></p>
+			</div>
+		</section>
+		<footer id="pie"><p>Derechos de Autor Reservados Copyright &copy 2019</p></footer>
+		<script src="../intranet-kmd/js/jquery-3.4.1.js"></script>
+		<script src="../intranet-kmd/js/menu.js"></script>
+	</body>
+</html>
