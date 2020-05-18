@@ -1,0 +1,42 @@
+@font-face{
+    font-family: 'KIABold';
+    src: url(../fonts/KIA_Bold.ttf);
+    src: url(../fonts/KIA_Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'KIAMedium';
+    src: url(../fonts/KIA_Medium.ttf);
+    src: url(../fonts/KIA_Medium.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'KIALight';
+    src: url(../fonts/KIA_Light.ttf);
+    src: url(../fonts/KIA_Light.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'KIAOTFBold';
+    src: url(../fonts/KIAOTFB.otf);
+    src: url(../fonts/KIAOTFB.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'KIAOTFMedium';
+    src: url(../fonts/KIAOTFM.otf);
+    src: url(../fonts/KIAOTFM.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'KIAOTFLight';
+    src: url(../fonts/KIAOTFL.otf);
+    src: url(../fonts/KIAOTFL.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}

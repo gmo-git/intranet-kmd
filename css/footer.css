@@ -1,0 +1,20 @@
+footer{
+	width: 100%;
+	align-self: flex-end;
+	justify-content: center;
+	background: #bb162b;
+}
+footer p{
+	display: block;
+	color: #fff;
+	font-size: 0.6em;
+	text-align: center;
+	padding: 10px 0 10px 0;
+	transition: all 0.3s;
+}
+@media screen and (min-width: 350px){
+	footer p{
+		font-size: 0.8em;
+		padding: 15px 0 15px 0;
+	}
+}

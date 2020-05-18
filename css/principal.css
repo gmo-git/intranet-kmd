@@ -1,0 +1,15 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'KIAMedium', 'KIAOTFMedium', 'Kia Medium','Arial';
+}
+body{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+	min-height: 100vh;
+	min-width: 300px;
+	background: #ddd;
+	justify-content: center;
+	align-items: flex-start;
+}

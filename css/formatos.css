@@ -1,0 +1,24 @@
+.excel, .pdf{
+    padding: 5px 10px;
+    background-color: green;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+.pdf{
+    background-color: darkred;
+}
+.deptos{
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex: auto;
+    flex: auto;
+    justify-content: center;
+    width: 100%;
+}
+.subtitulos{
+    border-bottom: 3px solid #7e8083;
+    text-align: left;
+}

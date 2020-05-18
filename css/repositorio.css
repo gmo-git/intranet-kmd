@@ -1,0 +1,22 @@
+table{
+    margin-bottom: 20px;
+}
+caption{
+    margin-bottom: 10px;
+}
+th, td{
+    border: 1px solid #777;
+    width: auto;
+    padding: 5px 10px;
+}
+th{
+    background-color: #bb162b;
+    color: #fff;
+}
+#cuerpo p {
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient( 90deg, transparent 0, #fff 20%, #fff 80%, transparent 100%);
+    /* color: #bb162b; */
+    /* color: #7e8083; */
+}

@@ -1,0 +1,61 @@
+#cabecera{
+	width: 100%;
+	height: 90px;
+	max-width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	background: #bb162b;
+	border-bottom: 15px solid #7e8083;
+	transition: all 0.3s;
+}
+#logo{
+	display: inline-block;
+	position: absolute;
+	padding:15px;
+	width: 130px;
+	height: 90px;
+	transform: scale(0);
+	transition: all 0.4s;
+}
+#cabecera h1, #eslogan{
+	display: inline-flex;
+	width: 100%;
+	height: 50%;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	color: #fff;
+	transition: all 0.3s;
+}
+#eslogan{
+	font-size: 1em;
+	color: #7e8083;
+}
+@media screen and (min-width: 350px){
+	#cabecera{
+		height: 120px;
+	}
+	#cabecera h1{
+		font-size: 2.7em;
+	}
+	#eslogan{
+		font-size: 1.3em;
+	}
+}
+@media screen and (min-width: 750px){
+		#cabecera{
+			border-bottom: 0;
+		}
+		#cabecera h1{
+			font-size: 3em;
+			transition: all 0.5s;
+		}
+		#eslogan{
+			font-size: 1.5em;
+			transition: all 0.5s;
+		}
+		#logo{
+			transform: scale(1);
+		}
+}

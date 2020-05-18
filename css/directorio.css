@@ -1,0 +1,214 @@
+.tarjeta{
+    display: flex;
+    -ms-flex: auto;
+    flex: auto;
+    border: 1px solid #7e8083;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    max-width: 320px;
+    min-width: 320px;
+    height: 106px;
+    align-items: center;
+}
+.cargo{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    max-width: 25%;
+    min-width: 25%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    background-color: #bb162b;
+    color: white;
+    font-weight: normal;
+}
+#cuerpo .tarjeta .cargo{
+    font-size: 1em;
+}
+.tarjeta span{
+    font-weight: bold;
+    font-size: 1.2em;
+    white-space: nowrap;
+}
+#cuerpo .tarjeta p{
+    font-weight: bold;
+    padding: 5px;
+    overflow:hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.tarjeta p a{
+    font-size: 0.9em;
+    text-decoration: none;
+    color: blue;
+}
+.subtitulos{
+    border-bottom: 3px solid #bb162b;
+    text-align: left;
+}
+/* Tabla de Extensiones */
+
+
+.ext-modal{
+    align-content: center;
+    background-color: rgba(0,0,0,0.5);
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0.8em;
+    justify-content: center;
+    position: absolute;
+    height: 100vh;
+    top: -100vh;
+    width: 100vw;
+    z-index: 1000;
+    transition: top 0.5s;
+}
+.ext-modal:target{
+    top: 0;
+    position: fixed;
+    max-height: 100vh;
+}
+.content-modal{
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    position: absolute;
+    width: 520px;
+    right: calc(50vw - (520px/2));
+    margin-bottom: 10px;
+    top: -100vh;
+    -ms-transition: top 0.5s;
+    -moz-transition: top 0.5s;
+    -webkit-transition: top 0.5s;
+    transition: top 0.5s;
+}
+.ext-modal:target .content-modal{
+    max-height: calc(100vh - 10px);
+    overflow-y: auto;
+    top: 10px;
+}
+table{
+    border-collapse: collapse;
+    margin: auto;
+    position: absolute;
+    top: -1000px;
+    -ms-transition: top 0.5s;
+    -moz-transition: top 0.5s;
+    -webkit-transition: top 0.5s;
+    transition: top 0.5s;
+}
+.ext-modal:target .content-modal table{
+    position: relative;
+    top: auto;
+}
+caption{
+    padding: 5px;
+}
+tr>td:first-child{
+    font-weight: bold;
+}
+td, th{
+    border: 1px solid #aaa;
+    padding: 2px 5px;
+}
+th{
+    background-color: #bb162b;
+    color: #fff;
+    cursor: pointer;
+}
+.mostrar-ext-modal, .btn-modal-close{
+    background-color: #bb162b;
+    border-radius: 15px;
+    color: white;
+    padding: 3px 10px;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.mostrar-ext-modal{
+    margin-bottom: 5px;
+    padding: 5px 10px;
+}
+.btn-modal-close:hover, .mostrar-ext-modal:hover{
+    background-color: hsl(352,90%,45%);
+}
+.btn-modal-close:active, .mostrar-ext-modal:active{
+    -ms-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+@media screen and (min-width: 250px){
+    .ext-modal:target .content-modal{
+        width: 300px;
+        right: calc(50vw - (300px/2));
+    }
+}
+@media screen and (min-width: 350px){
+    #cuerpo p{
+        font-size: 0.9em;
+    }
+    span{
+        font-size: 1.1em;
+    }
+    .ext-modal:target .content-modal{
+        width: 350px;
+        right: calc(50vw - (350px/2));
+    }
+}
+@media screen and (min-width: 500px){
+	#cuerpo{
+		width: 85%;
+	}
+    #cuerpo p{
+        font-size: 1em;
+    }
+    .ext-modal:target .content-modal{
+        width: 400px;
+        right: calc(50vw - (400px/2));
+    }
+}
+@media screen and (min-width: 750px){
+	#cuerpo{
+		width: 80%;
+		margin-top: 35px;
+    }
+    .ext-modal{
+        font-size: 0.9em;
+    }
+    .ext-modal:target .content-modal{
+        width: 500px;
+        right: calc(50vw - (500px/2));
+    }
+}
+@media screen and (min-width: 950px){
+	#cuerpo{
+		width: 80%;
+		max-width: 1050px;
+    }
+    .ext-modal:target{
+        font-size: 1em;
+    }
+    .ext-modal:target .content-modal{
+        width: 520px;
+        right: calc(50vw - (520px/2));
+    }
+}
+@media screen and (min-width: 1085px){
+	#cuerpo{
+		width: 80%;
+		max-width: 1085px;
+    }
+    #cuerpo p{
+        font-size: 1em;
+    }
+    span{
+        font-size: 1.1em;
+    }
+}

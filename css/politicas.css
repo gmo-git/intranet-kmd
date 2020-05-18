@@ -1,0 +1,133 @@
+/* :root{
+	--rojokia: #bb162b;
+	--griskia: #7e8083;
+} */
+.politicas, .normas{
+    margin: 5px auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #7e8083;
+    border-radius: 5px;
+}
+.subtitulos {
+    display: inline-block;
+    position: relative;
+    background-color: #7e8083;
+    padding: 5px;
+    text-align: left;
+}
+.subtitulos-2{
+    font-family: 'KIAMedium', 'KIAOTFMedium', 'Kia Medium','Arial';
+    font-size: 1em;
+    font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    margin-left: 5px;
+}
+.subtitulos-2:hover{
+    color: #bb162b;
+    cursor: pointer;
+}
+ol {
+    margin:5px 10px;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+#p-adm-af,
+#p-adm-caja,
+#p-adm-capital,
+#p-adm-cuentas,
+#p-adm-cxc,
+#p-adm-inv,
+#p-adm-pasivos,
+#p-adm-tesoreria,
+#p-nue-admvtas,
+#p-nue-financ,
+#p-nue-flotillas,
+#p-usados,
+#p-svc-gara,
+#p-svc-hyp,
+#p-svc-taller,
+#p-refacc-almacen,
+#p-refacc-coord,
+#p-refacc-vta,
+#p-comco
+{
+    display:none;
+}
+#p-adm-af ~ .desplegar-lista-af,
+#p-adm-caja ~ .desplegar-lista-caja,
+#p-adm-capital ~ .desplegar-lista-capital,
+#p-adm-cuentas ~ .desplegar-lista-cuentas,
+#p-adm-cxc ~ .desplegar-lista-cxc,
+#p-adm-inv ~ .desplegar-lista-inv,
+#p-adm-pasivos ~ .desplegar-lista-pasivos,
+#p-adm-tesoreria ~ .desplegar-lista-tesoreria,
+#p-nue-admvtas ~ .desplegar-lista-admvtas,
+#p-nue-financ ~ .desplegar-lista-financ,
+#p-nue-flotillas ~ .desplegar-lista-flotillas,
+#p-usados ~ .desplegar-lista-usados,
+#p-svc-gara ~ .desplegar-lista-gara,
+#p-svc-hyp ~ .desplegar-lista-hyp,
+#p-svc-taller ~ .desplegar-lista-taller,
+#p-refacc-almacen ~ .desplegar-lista-almacen,
+#p-refacc-coord ~ .desplegar-lista-coord,
+#p-refacc-vta ~ .desplegar-lista-vta,
+#p-comco ~ .desplegar-lista-comco
+{
+     max-height: 0;
+     transform: scaleY(0);
+     overflow: hidden;
+     transition: all 0.5s;
+}
+
+#p-adm-af:checked ~ .desplegar-lista-af, 
+#p-adm-caja:checked ~ .desplegar-lista-caja,
+#p-adm-capital:checked ~ .desplegar-lista-capital,
+#p-adm-cuentas:checked ~ .desplegar-lista-cuentas,
+#p-adm-cxc:checked ~ .desplegar-lista-cxc,
+#p-adm-inv:checked ~ .desplegar-lista-inv,
+#p-adm-pasivos:checked ~ .desplegar-lista-pasivos,
+#p-adm-tesoreria:checked ~ .desplegar-lista-tesoreria,
+#p-nue-admvtas:checked ~ .desplegar-lista-admvtas,
+#p-nue-financ:checked ~ .desplegar-lista-financ,
+#p-nue-flotillas:checked ~ .desplegar-lista-flotillas,
+#p-usados:checked ~ .desplegar-lista-usados,
+#p-svc-gara:checked ~ .desplegar-lista-gara,
+#p-svc-hyp:checked ~ .desplegar-lista-hyp,
+#p-svc-taller:checked ~ .desplegar-lista-taller,
+#p-refacc-almacen:checked ~ .desplegar-lista-almacen,
+#p-refacc-coord:checked ~ .desplegar-lista-coord,
+#p-refacc-vta:checked ~ .desplegar-lista-vta,
+#p-comco:checked ~ .desplegar-lista-comco
+{
+    max-height: 500px;
+    transform: scaleY(1);
+}
+
+@media screen and (min-width: 450px){
+    .politicas{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 750px){
+    .politicas{
+        width: calc(50% - 20px);
+    }
+    .subtitulos-2{
+        font-size: 1.2em;
+    }
+}
+@media screen and (min-width: 950px){
+    .politicas{
+        width: calc(33.33% - 20px);
+    }
+    .subtitulos {
+        font-size: 1.4em;
+    }
+}
